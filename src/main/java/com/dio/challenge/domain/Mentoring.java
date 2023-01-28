@@ -1,11 +1,31 @@
 package com.dio.challenge.domain;
 
-public class Mentoring extends Content{
+import java.time.LocalDate;
+
+public class Mentoring extends Content {
+
+    private LocalDate date;
 
     @Override
     public double calculateXP() {
-        // TODO Auto-generated method stub
-        return 0;
+        return XP_MIN * 20d;
     }
-    
+
+    public Mentoring() {
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
+    @Override
+    public String toString() {
+        return "\nMentoria {" + "\ntitulo=" + getTitle() + ", \ndescrição=" + getDescription() + ", \ndata="
+                + date + "\n}";
+    }
+
 }
